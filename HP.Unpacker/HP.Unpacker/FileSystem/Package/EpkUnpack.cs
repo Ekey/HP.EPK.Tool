@@ -87,8 +87,6 @@ namespace HP.Unpacker
                             Byte[] lpDstBuffer = new Byte[m_Entry.dwDecompressedSize];
                             lpDstBuffer = LZMA.iDecompress(lpSrcBuffer, lpDstBuffer, m_Entry.dwDecompressedSize);
 
-                            UInt32 dwXmlMagic = BitConverter.ToUInt32(lpDstBuffer, 0);
-
                             File.WriteAllBytes(m_FullPath, lpDstBuffer);
                         }
                     }
